@@ -228,10 +228,10 @@
             </objects>
             <point key="canvasLocation" x="2341.5999999999999" y="119.1904047976012"/>
         </scene>
-        <!--View Controller-->
+        <!--Single Student Info View Controller-->
         <scene sceneID="Y6S-EU-8XL">
             <objects>
-                <viewController id="KbV-4g-qeY" sceneMemberID="viewController">
+                <viewController id="KbV-4g-qeY" customClass="SingleStudentInfoViewController" customModule="网络传值" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IiK-dr-5SL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -326,6 +326,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QdD-Ko-mFW"/>
                     </view>
+                    <connections>
+                        <outlet property="inoutPhoneTextField" destination="hrK-tk-yeM" id="qNg-AP-ZAk"/>
+                        <outlet property="inputBirthTextField" destination="iOz-Jp-thd" id="nGa-Ha-1BQ"/>
+                        <outlet property="inputGradeTextField" destination="b4E-tn-F3R" id="rQh-GI-ivW"/>
+                        <outlet property="inputNameTextField" destination="KY8-GW-ZtS" id="3c1-hQ-Wxy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krt-0E-yty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,7 +12,7 @@ import Foundation
 //学生信息一览内，单个学生的类型
 
 struct SingleStudent:Decodable {
-    var s_no:String?
-    var name:String?
-    var grade:String?
+    var s_no   :String?
+    var name   :String?
+    var grade  :String?
 }

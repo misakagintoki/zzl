@@ -18,6 +18,8 @@
 		CEEA0FFF221FAEE700DF9A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEA0FFE221FAEE700DF9A5E /* Assets.xcassets */; };
 		CEEA1002221FAEE700DF9A5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEA1000221FAEE700DF9A5E /* LaunchScreen.storyboard */; };
 		CEEA100A221FAF3700DF9A5E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA1009221FAF3700DF9A5E /* MainViewController.swift */; };
+		CEFA73D622237CCE00A09FAB /* SingleStudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA73D522237CCE00A09FAB /* SingleStudentInfoViewController.swift */; };
+		CEFA73D82223838800A09FAB /* SingleStudentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA73D72223838800A09FAB /* SingleStudentDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		CEEA1001221FAEE700DF9A5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEEA1003221FAEE700DF9A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEA1009221FAF3700DF9A5E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CEFA73D522237CCE00A09FAB /* SingleStudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStudentInfoViewController.swift; sourceTree = "<group>"; };
+		CEFA73D72223838800A09FAB /* SingleStudentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStudentDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 				CE02A25A22226D4700554DAE /* StudentInfoViewController.swift */,
 				CE02A25D22226F9D00554DAE /* SingleStudent.swift */,
 				CE02A25F2222704300554DAE /* StudentTableViewCell.swift */,
+				CEFA73D522237CCE00A09FAB /* SingleStudentInfoViewController.swift */,
+				CEFA73D72223838800A09FAB /* SingleStudentDetail.swift */,
 			);
 			path = "POST通信";
 			sourceTree = "<group>";
@@ -183,7 +189,9 @@
 				CE02A25E22226F9D00554DAE /* SingleStudent.swift in Sources */,
 				CEEA100A221FAF3700DF9A5E /* MainViewController.swift in Sources */,
 				CE02A25B22226D4700554DAE /* StudentInfoViewController.swift in Sources */,
+				CEFA73D82223838800A09FAB /* SingleStudentDetail.swift in Sources */,
 				CE48995F221FD0F900608714 /* RandomUserInfoViewController.swift in Sources */,
+				CEFA73D622237CCE00A09FAB /* SingleStudentInfoViewController.swift in Sources */,
 				CE02A2602222704300554DAE /* StudentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
