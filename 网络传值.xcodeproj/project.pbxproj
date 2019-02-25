@@ -20,6 +20,7 @@
 		CEEA100A221FAF3700DF9A5E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA1009221FAF3700DF9A5E /* MainViewController.swift */; };
 		CEFA73D622237CCE00A09FAB /* SingleStudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA73D522237CCE00A09FAB /* SingleStudentInfoViewController.swift */; };
 		CEFA73D82223838800A09FAB /* SingleStudentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA73D72223838800A09FAB /* SingleStudentDetail.swift */; };
+		CEFA73DA2223B0B500A09FAB /* PostForPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA73D92223B0B500A09FAB /* PostForPicture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		CEEA1009221FAF3700DF9A5E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CEFA73D522237CCE00A09FAB /* SingleStudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStudentInfoViewController.swift; sourceTree = "<group>"; };
 		CEFA73D72223838800A09FAB /* SingleStudentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStudentDetail.swift; sourceTree = "<group>"; };
+		CEFA73D92223B0B500A09FAB /* PostForPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostForPicture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				CE02A25F2222704300554DAE /* StudentTableViewCell.swift */,
 				CEFA73D522237CCE00A09FAB /* SingleStudentInfoViewController.swift */,
 				CEFA73D72223838800A09FAB /* SingleStudentDetail.swift */,
+				CEFA73D92223B0B500A09FAB /* PostForPicture.swift */,
 			);
 			path = "POST通信";
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				CEFA73D82223838800A09FAB /* SingleStudentDetail.swift in Sources */,
 				CE48995F221FD0F900608714 /* RandomUserInfoViewController.swift in Sources */,
 				CEFA73D622237CCE00A09FAB /* SingleStudentInfoViewController.swift in Sources */,
+				CEFA73DA2223B0B500A09FAB /* PostForPicture.swift in Sources */,
 				CE02A2602222704300554DAE /* StudentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

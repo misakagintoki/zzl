@@ -300,9 +300,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="序号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXw-aJ-AGj">
+                                <rect key="frame" x="50" y="587" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="PZn-0r-ewe"/>
+                                    <constraint firstAttribute="height" constant="30" id="Sgi-Ht-5n4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRL-o2-OX5">
+                                <rect key="frame" x="130" y="587" width="215" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="QdD-Ko-mFW" firstAttribute="trailing" secondItem="qRL-o2-OX5" secondAttribute="trailing" constant="30" id="1Jz-Cm-pmE"/>
                             <constraint firstItem="Vpw-ac-5cG" firstAttribute="leading" secondItem="QdD-Ko-mFW" secondAttribute="leading" constant="50" id="8e4-Mg-xCL"/>
                             <constraint firstItem="BAB-Tq-tas" firstAttribute="top" secondItem="bp4-oS-b3K" secondAttribute="bottom" constant="50" id="9Ph-tE-Ee4"/>
                             <constraint firstItem="iOz-Jp-thd" firstAttribute="bottom" secondItem="BAB-Tq-tas" secondAttribute="bottom" id="Ahq-b2-mjz"/>
@@ -311,12 +328,16 @@
                             <constraint firstItem="QdD-Ko-mFW" firstAttribute="trailing" secondItem="KY8-GW-ZtS" secondAttribute="trailing" constant="30" id="Jbp-LB-q9p"/>
                             <constraint firstItem="KY8-GW-ZtS" firstAttribute="bottom" secondItem="tNw-yh-FxY" secondAttribute="bottom" id="NUM-pE-ib2"/>
                             <constraint firstItem="hrK-tk-yeM" firstAttribute="bottom" secondItem="Vpw-ac-5cG" secondAttribute="bottom" id="OCV-hU-mSY"/>
+                            <constraint firstItem="qRL-o2-OX5" firstAttribute="leading" secondItem="YXw-aJ-AGj" secondAttribute="trailing" constant="30" id="PUD-93-YmW"/>
                             <constraint firstItem="tNw-yh-FxY" firstAttribute="leading" secondItem="QdD-Ko-mFW" secondAttribute="leading" constant="50" id="TPS-qN-B5a"/>
                             <constraint firstItem="tNw-yh-FxY" firstAttribute="top" secondItem="QdD-Ko-mFW" secondAttribute="top" constant="50" id="XYB-q6-Qxb"/>
                             <constraint firstItem="hrK-tk-yeM" firstAttribute="leading" secondItem="Vpw-ac-5cG" secondAttribute="trailing" constant="30" id="ZyS-iZ-aZF"/>
+                            <constraint firstItem="YXw-aJ-AGj" firstAttribute="leading" secondItem="QdD-Ko-mFW" secondAttribute="leading" constant="50" id="bac-ov-plD"/>
                             <constraint firstItem="KY8-GW-ZtS" firstAttribute="leading" secondItem="tNw-yh-FxY" secondAttribute="trailing" constant="30" id="gmi-Ob-TOI"/>
+                            <constraint firstItem="qRL-o2-OX5" firstAttribute="bottom" secondItem="YXw-aJ-AGj" secondAttribute="bottom" id="hgQ-mC-DCm"/>
                             <constraint firstItem="bp4-oS-b3K" firstAttribute="top" secondItem="tNw-yh-FxY" secondAttribute="bottom" constant="50" id="hpu-Xr-FAx"/>
                             <constraint firstItem="QdD-Ko-mFW" firstAttribute="trailing" secondItem="b4E-tn-F3R" secondAttribute="trailing" constant="30" id="mKb-5w-J2e"/>
+                            <constraint firstItem="QdD-Ko-mFW" firstAttribute="bottom" secondItem="YXw-aJ-AGj" secondAttribute="bottom" constant="50" id="mbi-3R-lYc"/>
                             <constraint firstItem="bp4-oS-b3K" firstAttribute="leading" secondItem="QdD-Ko-mFW" secondAttribute="leading" constant="50" id="n2p-2E-FUd"/>
                             <constraint firstItem="b4E-tn-F3R" firstAttribute="leading" secondItem="bp4-oS-b3K" secondAttribute="trailing" constant="30" id="pBo-y4-jZC"/>
                             <constraint firstItem="QdD-Ko-mFW" firstAttribute="trailing" secondItem="hrK-tk-yeM" secondAttribute="trailing" constant="30" id="qyC-0b-rC1"/>
@@ -331,6 +352,7 @@
                         <outlet property="inputBirthTextField" destination="iOz-Jp-thd" id="nGa-Ha-1BQ"/>
                         <outlet property="inputGradeTextField" destination="b4E-tn-F3R" id="rQh-GI-ivW"/>
                         <outlet property="inputNameTextField" destination="KY8-GW-ZtS" id="3c1-hQ-Wxy"/>
+                        <outlet property="inputStudentNOTextField" destination="qRL-o2-OX5" id="5A9-ff-6Sn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krt-0E-yty" userLabel="First Responder" sceneMemberID="firstResponder"/>

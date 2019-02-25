@@ -15,3 +15,7 @@ struct SingleStudentDetail:Decodable {
     var birthday     :String?
     var phone_number :String?
 }
+
+struct messageFromUrl:Decodable {
+    var message:String?
+}

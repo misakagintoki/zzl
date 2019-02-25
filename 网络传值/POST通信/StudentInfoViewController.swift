@@ -13,6 +13,8 @@ enum PostType {
     case GetSingle
 }
 
+var host = "http://www.kinwork.jp:7775/LearnApi"
+
 class StudentInfoViewController: UIViewController {
     
     
@@ -20,7 +22,7 @@ class StudentInfoViewController: UIViewController {
     
     var studentList:[SingleStudent] = []
     //建立一个变量，用来存API的地址（HOST），有时候很多地方都要通信，而host只有一个的时候，可以考虑做成全局变量
-    var host = "http://www.kinwork.jp:7775/LearnApi"
+//    var host = "http://www.kinwork.jp:7775/LearnApi"
     var postUrl_getAll = "/getStudentList"
     var postUrl_getStu = "/viewStudent"
     
