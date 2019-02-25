@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE02A25722224EF000554DAE /* Userinfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02A25622224EF000554DAE /* Userinfo.swift */; };
+		CE02A25B22226D4700554DAE /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02A25A22226D4700554DAE /* StudentInfoViewController.swift */; };
+		CE02A25E22226F9D00554DAE /* SingleStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02A25D22226F9D00554DAE /* SingleStudent.swift */; };
+		CE02A2602222704300554DAE /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02A25F2222704300554DAE /* StudentTableViewCell.swift */; };
+		CE48995F221FD0F900608714 /* RandomUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48995E221FD0F900608714 /* RandomUserInfoViewController.swift */; };
+		CE489961221FD15F00608714 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE489960221FD15F00608714 /* InfoTableViewCell.swift */; };
 		CEEA0FF8221FAEE500DF9A5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA0FF7221FAEE500DF9A5E /* AppDelegate.swift */; };
-		CEEA0FFA221FAEE500DF9A5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA0FF9221FAEE500DF9A5E /* ViewController.swift */; };
 		CEEA0FFD221FAEE500DF9A5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEA0FFB221FAEE500DF9A5E /* Main.storyboard */; };
 		CEEA0FFF221FAEE700DF9A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEA0FFE221FAEE700DF9A5E /* Assets.xcassets */; };
 		CEEA1002221FAEE700DF9A5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEA1000221FAEE700DF9A5E /* LaunchScreen.storyboard */; };
+		CEEA100A221FAF3700DF9A5E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA1009221FAF3700DF9A5E /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE02A25622224EF000554DAE /* Userinfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Userinfo.swift; sourceTree = "<group>"; };
+		CE02A25A22226D4700554DAE /* StudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
+		CE02A25D22226F9D00554DAE /* SingleStudent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStudent.swift; sourceTree = "<group>"; };
+		CE02A25F2222704300554DAE /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
+		CE48995E221FD0F900608714 /* RandomUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserInfoViewController.swift; sourceTree = "<group>"; };
+		CE489960221FD15F00608714 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		CEEA0FF4221FAEE500DF9A5E /* 网络传值.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网络传值.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEA0FF7221FAEE500DF9A5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEEA0FF9221FAEE500DF9A5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CEEA0FFC221FAEE500DF9A5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEEA0FFE221FAEE700DF9A5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEEA1001221FAEE700DF9A5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEEA1003221FAEE700DF9A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEEA1009221FAF3700DF9A5E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +47,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE02A25822226D0200554DAE /* 下载图片 */ = {
+			isa = PBXGroup;
+			children = (
+				CEEA1009221FAF3700DF9A5E /* MainViewController.swift */,
+			);
+			path = "下载图片";
+			sourceTree = "<group>";
+		};
+		CE02A25922226D1500554DAE /* 选择随机用户 */ = {
+			isa = PBXGroup;
+			children = (
+				CE02A25622224EF000554DAE /* Userinfo.swift */,
+				CE489960221FD15F00608714 /* InfoTableViewCell.swift */,
+				CE48995E221FD0F900608714 /* RandomUserInfoViewController.swift */,
+			);
+			path = "选择随机用户";
+			sourceTree = "<group>";
+		};
+		CE02A25C22226D5000554DAE /* POST通信 */ = {
+			isa = PBXGroup;
+			children = (
+				CE02A25A22226D4700554DAE /* StudentInfoViewController.swift */,
+				CE02A25D22226F9D00554DAE /* SingleStudent.swift */,
+				CE02A25F2222704300554DAE /* StudentTableViewCell.swift */,
+			);
+			path = "POST通信";
+			sourceTree = "<group>";
+		};
 		CEEA0FEB221FAEE500DF9A5E = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +94,10 @@
 		CEEA0FF6221FAEE500DF9A5E /* 网络传值 */ = {
 			isa = PBXGroup;
 			children = (
+				CE02A25C22226D5000554DAE /* POST通信 */,
+				CE02A25922226D1500554DAE /* 选择随机用户 */,
+				CE02A25822226D0200554DAE /* 下载图片 */,
 				CEEA0FF7221FAEE500DF9A5E /* AppDelegate.swift */,
-				CEEA0FF9221FAEE500DF9A5E /* ViewController.swift */,
 				CEEA0FFB221FAEE500DF9A5E /* Main.storyboard */,
 				CEEA0FFE221FAEE700DF9A5E /* Assets.xcassets */,
 				CEEA1000221FAEE700DF9A5E /* LaunchScreen.storyboard */,
@@ -135,8 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEEA0FFA221FAEE500DF9A5E /* ViewController.swift in Sources */,
 				CEEA0FF8221FAEE500DF9A5E /* AppDelegate.swift in Sources */,
+				CE02A25722224EF000554DAE /* Userinfo.swift in Sources */,
+				CE489961221FD15F00608714 /* InfoTableViewCell.swift in Sources */,
+				CE02A25E22226F9D00554DAE /* SingleStudent.swift in Sources */,
+				CEEA100A221FAF3700DF9A5E /* MainViewController.swift in Sources */,
+				CE02A25B22226D4700554DAE /* StudentInfoViewController.swift in Sources */,
+				CE48995F221FD0F900608714 /* RandomUserInfoViewController.swift in Sources */,
+				CE02A2602222704300554DAE /* StudentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
