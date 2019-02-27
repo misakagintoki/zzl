@@ -13,6 +13,7 @@
 		CE02A2602222704300554DAE /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02A25F2222704300554DAE /* StudentTableViewCell.swift */; };
 		CE48995F221FD0F900608714 /* RandomUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48995E221FD0F900608714 /* RandomUserInfoViewController.swift */; };
 		CE489961221FD15F00608714 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE489960221FD15F00608714 /* InfoTableViewCell.swift */; };
+		CE92F6672225195A00C984FA /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE92F6662225195A00C984FA /* ParentViewController.swift */; };
 		CEEA0FF8221FAEE500DF9A5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA0FF7221FAEE500DF9A5E /* AppDelegate.swift */; };
 		CEEA0FFD221FAEE500DF9A5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEA0FFB221FAEE500DF9A5E /* Main.storyboard */; };
 		CEEA0FFF221FAEE700DF9A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEA0FFE221FAEE700DF9A5E /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		CEFA73D622237CCE00A09FAB /* SingleStudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA73D522237CCE00A09FAB /* SingleStudentInfoViewController.swift */; };
 		CEFA73D82223838800A09FAB /* SingleStudentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA73D72223838800A09FAB /* SingleStudentDetail.swift */; };
 		CEFA73DA2223B0B500A09FAB /* PostForPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA73D92223B0B500A09FAB /* PostForPicture.swift */; };
+		CEFA73DE2223D4D000A09FAB /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA73DD2223D4D000A09FAB /* PostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,7 @@
 		CE02A25F2222704300554DAE /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		CE48995E221FD0F900608714 /* RandomUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserInfoViewController.swift; sourceTree = "<group>"; };
 		CE489960221FD15F00608714 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		CE92F6662225195A00C984FA /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		CEEA0FF4221FAEE500DF9A5E /* 网络传值.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网络传值.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEA0FF7221FAEE500DF9A5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEEA0FFC221FAEE500DF9A5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		CEFA73D522237CCE00A09FAB /* SingleStudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStudentInfoViewController.swift; sourceTree = "<group>"; };
 		CEFA73D72223838800A09FAB /* SingleStudentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStudentDetail.swift; sourceTree = "<group>"; };
 		CEFA73D92223B0B500A09FAB /* PostForPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostForPicture.swift; sourceTree = "<group>"; };
+		CEFA73DD2223D4D000A09FAB /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				CEFA73D522237CCE00A09FAB /* SingleStudentInfoViewController.swift */,
 				CEFA73D72223838800A09FAB /* SingleStudentDetail.swift */,
 				CEFA73D92223B0B500A09FAB /* PostForPicture.swift */,
+				CEFA73DD2223D4D000A09FAB /* PostViewController.swift */,
+				CE92F6662225195A00C984FA /* ParentViewController.swift */,
 			);
 			path = "POST通信";
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFA73DE2223D4D000A09FAB /* PostViewController.swift in Sources */,
 				CEEA0FF8221FAEE500DF9A5E /* AppDelegate.swift in Sources */,
 				CE02A25722224EF000554DAE /* Userinfo.swift in Sources */,
 				CE489961221FD15F00608714 /* InfoTableViewCell.swift in Sources */,
@@ -193,6 +200,7 @@
 				CEEA100A221FAF3700DF9A5E /* MainViewController.swift in Sources */,
 				CE02A25B22226D4700554DAE /* StudentInfoViewController.swift in Sources */,
 				CEFA73D82223838800A09FAB /* SingleStudentDetail.swift in Sources */,
+				CE92F6672225195A00C984FA /* ParentViewController.swift in Sources */,
 				CE48995F221FD0F900608714 /* RandomUserInfoViewController.swift in Sources */,
 				CEFA73D622237CCE00A09FAB /* SingleStudentInfoViewController.swift in Sources */,
 				CEFA73DA2223B0B500A09FAB /* PostForPicture.swift in Sources */,

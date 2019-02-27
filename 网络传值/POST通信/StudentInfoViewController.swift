@@ -8,25 +8,10 @@
 
 import UIKit
 
-enum PostType {
-    case GetAll
-    case GetSingle
-}
-
-var host = "http://www.kinwork.jp:7775/LearnApi"
-
-class StudentInfoViewController: UIViewController {
+class StudentInfoViewController: ParentViewController {
     
     
     @IBOutlet weak var listTableView: UITableView!
-    
-    var studentList:[SingleStudent] = []
-    //建立一个变量，用来存API的地址（HOST），有时候很多地方都要通信，而host只有一个的时候，可以考虑做成全局变量
-//    var host = "http://www.kinwork.jp:7775/LearnApi"
-    var postUrl_getAll = "/getStudentList"
-    var postUrl_getStu = "/viewStudent"
-    
-    var session:URLSession?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,64 +19,15 @@ class StudentInfoViewController: UIViewController {
         listTableView.delegate = self
         listTableView.dataSource = self
         
-        session = URLSession(configuration: .default)
-        
-        //进行获得学生一览的通信
-        let strUrl = host + postUrl_getAll
-        getData(strUrl: strUrl,type: .GetAll, para: nil)
+        //app开始运行的时候，进行获得学生一览的通信
+//        reloadTableView()
     }
     
-    func getData(strUrl:String,type:PostType,para:[String:String]?){
-        //        let strUrl = host + postUrl_getAll
-        if let url = URL(string: strUrl){
-            var urlRequest = URLRequest(url: url)
-            
-            let list = NSMutableArray() //可变数组
-            //如果有para才会进入下面这一段代码，改变，完成请求，否则，就直接进入后面的代码
-            if para != nil{
-                //设置通信方式为post
-                urlRequest.httpMethod = "POST"
-                //整理post用的数据
-                for(key,value) in para!{
-                    let itemStr = "\(key)=\(value)"
-                    list.add(itemStr)
-                }
-                let paraStr = list.componentsJoined(by: "&")
-                let paraData = paraStr.data(using: String.Encoding.utf8)
-                urlRequest.httpBody = paraData
-            }
-            
-            
-            let task = session?.dataTask(with: urlRequest, completionHandler: {
-                (data,response,error) in
-                if error != nil{
-                    print(error!.localizedDescription)
-                    return
-                }
-                if let downloadData = data{
-                    do{
-                        switch type{
-                        case .GetAll:
-                            self.studentList = try JSONDecoder().decode([SingleStudent].self, from: downloadData)
-                            DispatchQueue.main.async(execute: {
-                                self.listTableView.reloadData()
-                            })
-                        case .GetSingle:
-                            let selectedStudent = try JSONDecoder().decode(SingleStudentDetail.self, from: downloadData)
-//                            print(selectedStudent)
-                            DispatchQueue.main.async(execute: {
-                                self.performSegue(withIdentifier: "TotalInfoSegue", sender: selectedStudent)
-                            })
-                        }
-                    }catch{
-                        print(error.localizedDescription)
-                    }
-                }
-            })
-            task?.resume()
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reloadTableView()
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TotalInfoSegue"{
             let detailPage = segue.destination as! SingleStudentInfoViewController
@@ -100,7 +36,12 @@ class StudentInfoViewController: UIViewController {
         }
     }
     
-    
+    func reloadTableView(){
+        let strUrl = host + postUrl_getAll
+        let postClass = PostClass()
+        postClass.reloadTableView = self
+        postClass.getData(strUrl: strUrl, type: .GetAll, para: nil)
+    }
     
 }
 
@@ -124,7 +65,54 @@ extension StudentInfoViewController:UITableViewDelegate,UITableViewDataSource{
         if let studentNo = studentList[indexPath.row].s_no{
             let paraDict = ["s_no":studentNo]
             let strUrl = host + postUrl_getStu
-            getData(strUrl: strUrl, type: .GetSingle, para: paraDict)
+            let postClass = PostClass()
+            postClass.reloadTableView = self
+            postClass.getData(strUrl: strUrl, type: .GetSingle, para: paraDict)
         }
     }
+    
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        if let studentNo = studentList[indexPath.row].s_no{
+            let paraDict = ["s_no":studentNo]
+            let strUrl = host + postUrl_deleStu
+            
+            //重中之重，要使用协议，必须实例化协议，且让它在本页面实现
+            let postClass = PostClass()
+            postClass.reloadTableView = self
+            
+            //建立一个警告视图，建立一个公共类，作出一个警告视图的建立函数，以用于继承
+            let cancelAction = UIAlertAction(title: "我知道了", style: .default, handler: nil)
+            let alertController = doAlert(title: "成功删除", message: "已经把这个学生的资料从服务器删除", okAction: nil, cancelAction: cancelAction, style: .alert)
+
+            //在删除键里面调价方法，从数据上删除数据后，弹出这个警告视图
+            let deleteStu = UITableViewRowAction(style: .normal, title: "删除") { (action, indexPath) in
+                //从服务器上面删除学生信息，更新tableview的代码应该写在方法里，不然的话，会先更新tableviw后删除数据
+                postClass.getData(strUrl: strUrl, type: .deleStu, para: paraDict)
+                //在本地数据中删除该行的学生信息
+                studentList.remove(at: indexPath.row)
+                //跳出警告视图，提示已经删除
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
+            deleteStu.backgroundColor = .red
+            return [deleteStu]
+        }
+        return nil
+    }
+    
+    
+    
+}
+
+//协议的方法，1.跳转画面，2.刷新tableView
+extension StudentInfoViewController: ReloadtableView{
+    func perfrom(selected:Any) {
+        performSegue(withIdentifier: "TotalInfoSegue", sender: selected)
+    }
+    
+    func reload() {
+        listTableView.reloadData()
+    }
+    
 }

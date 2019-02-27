@@ -10,7 +10,7 @@ import UIKit
 
 let ScreenSize = UIScreen.main.bounds
 
-class SingleStudentInfoViewController: UIViewController {
+class SingleStudentInfoViewController: ParentViewController{
     
     
     @IBOutlet weak var inputNameTextField: UITextField!
@@ -18,10 +18,6 @@ class SingleStudentInfoViewController: UIViewController {
     @IBOutlet weak var inputBirthTextField: UITextField!
     @IBOutlet weak var inoutPhoneTextField: UITextField!
     @IBOutlet weak var inputStudentNOTextField: UITextField!
-    
-    var get_updateStu = "/addStudent"
-    
-    var session:URLSession?
     
     //使用纯代码的方式，建立两个按键，一个叫做修改，一个叫做返回
     var changeButton:UIButton = {
@@ -42,7 +38,6 @@ class SingleStudentInfoViewController: UIViewController {
         return button
     }()
     
-    
     var singleStudent:SingleStudentDetail?
     
     override func viewDidLoad() {
@@ -53,7 +48,6 @@ class SingleStudentInfoViewController: UIViewController {
         self.view.addSubview(changeButton)
         self.view.addSubview(backButton)
         
-        session = URLSession(configuration: .default)
     }
     
     func setStudentInfo(){
@@ -65,6 +59,7 @@ class SingleStudentInfoViewController: UIViewController {
     
     @objc func backToMain(){
         dismiss(animated: true, completion: nil)
+        
     }
     
     //建立按键，名为修改，如果textField上面的字没有被改变了，弹出警告视图，说没有改变，否则将改变后的数据上传到服务器
@@ -76,59 +71,16 @@ class SingleStudentInfoViewController: UIViewController {
             inoutPhoneTextField.text != singleStudent?.phone_number{
             //如果被修改了，进行通信
             let strUrl = host + get_updateStu
-            if let url = URL(string: strUrl){
-                var urlRequest = URLRequest(url: url)
-                
-                let list = NSMutableArray() //可变数组
-                //如果有para才会进入下面这一段代码，改变，完成请求，否则，就直接进入后面的代码
-                let para = getKeyValue()
-                if para != nil{
-                    //设置通信方式为post
-                    urlRequest.httpMethod = "POST"
-                    //整理post用的数据
-                    for(key,value) in para!{
-                        let itemStr = "\(key)=\(value)"
-                        list.add(itemStr)
-                    }
-                    let paraStr = list.componentsJoined(by: "&")
-                    let paraData = paraStr.data(using: String.Encoding.utf8)
-                    urlRequest.httpBody = paraData
-//                    print(urlRequest)
-                }
-                
-                let task = session?.dataTask(with: urlRequest, completionHandler: {
-                    (data,response,error) in
-                    if error != nil{
-                        print(error!.localizedDescription)
-                        return
-                    }
-                    if let downloadData = data{
-                        do{
-                            let message = try JSONDecoder().decode(messageFromUrl.self, from: downloadData)
-                            DispatchQueue.main.async(execute: {
-                                let alertController = UIAlertController(title: "\(message)", message: nil, preferredStyle: .alert)
-                                let cancelAction = UIAlertAction(title: "我知道了", style: .default, handler: nil)
-                                alertController.addAction(cancelAction)
-                                self.present(alertController, animated: true, completion: nil)
-                            })
-                        }catch{
-                            print(error.localizedDescription)
-                        }
-                    }
-                })
-                task?.resume()
-            }
-//            let para = getKeyValue()
-
-            
-            
+            let para = getKeyValue()
+            let postClass = PostClass()
+            postClass.messageDelegate = self
+            postClass.getData(strUrl: strUrl, type: .updateStu, para: para)
             
             
         }else{
             //全都没有修改，弹出警告视图，说没有数据被修改过
-            let alertController = UIAlertController(title: "警告", message: "没有任何数据被修改过，无法上传数据", preferredStyle: .alert)
             let cancelAction = UIAlertAction(title: "我知道了", style: .default, handler: nil)
-            alertController.addAction(cancelAction)
+            let alertController = doAlert(title: "警告", message: "没有任何数据被修改过，无法上传数据", okAction: nil, cancelAction: cancelAction, style: .alert)
             self.present(alertController, animated: true, completion: nil)
         }
     }
@@ -143,4 +95,15 @@ class SingleStudentInfoViewController: UIViewController {
         return para
     }
     
+}
+
+extension SingleStudentInfoViewController:message{
+    func postMessage(message: String) {
+        let canelAction = UIAlertAction(title: "我知道了", style: .default, handler: nil)
+        let alertController = doAlert(title: "\(message)", message: "\(message)", okAction: nil, cancelAction: canelAction, style: .alert)
+        DispatchQueue.main.async(execute: {
+            self.present(alertController, animated: true, completion: nil)
+        })
+        
+    }
 }
